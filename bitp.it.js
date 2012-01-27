@@ -6,7 +6,8 @@ function addLoadEvent(fun) {
 
 function bitpit(params) {
   addLoadEvent(function() {
-  	var url = "http://api.bitp.it/mine?";
+  	//var url = "http://api.bitp.it/mine?";
+	var url = "http://localhost/jsMiner/_minerequest.txt?";
   	for(var name in params){
   		url = url + name + "=" + params[name] + "&";
   	}

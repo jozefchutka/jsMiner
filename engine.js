@@ -24,7 +24,7 @@ jsMiner.engine = function(options){
   }
     
   this.loadMoreWork = function(result){
-    var url = "/work?client_id=" + this.clientId;
+    var url = "/jsMiner/_minerequest.txt?client_id=" + this.clientId;
     if(this.hashRate > 0){
       url = url + "&hash_rate=" + this.hashRate;
     }
@@ -104,10 +104,12 @@ jsMiner.engine = function(options){
   };
   
   this.workerEntry = function(midstate, half, data, hash1, target, startNonce, endNonce){
+	/*
     if(!!window.Worker && !this.forceUIThread){
       this.webWorkerEntry(midstate, half, data, hash1, target, startNonce, endNonce);
       return;
     }
+	*/
     var nonce = startNonce;
     var delay = this.delayBetweenNonce;
     var me = this;
